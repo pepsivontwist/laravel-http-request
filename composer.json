@@ -1,0 +1,12 @@
+{
+    "name": "overburn/laravel-http-request",
+    "description": "CURL wrapper for Laravel",
+    "authors": [
+        {
+            "name": "Teodor Matis",
+            "email": "teodormatis@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
