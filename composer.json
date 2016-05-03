@@ -1,5 +1,5 @@
 {
-    "name": "overburn/laravel-http-request",
+    "name": "overburn/http-request",
     "description": "CURL wrapper for Laravel",
     "authors": [
         {

@@ -2,7 +2,9 @@
 
 namespace Overburn\HttpRequest;
 
-class HttpRequest {
+use Illuminate\Support\Facades\Facade;
+
+class HttpRequest extends Facade {
 	$defaultOptions = [
 
 	]
