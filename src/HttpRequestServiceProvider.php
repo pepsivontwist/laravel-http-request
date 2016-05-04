@@ -23,7 +23,9 @@ class HttpRequestServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
+        $this->app['httpRequest'] = $this->app->share(function($app) {
+            return new HttpRequest();
+        });
     }
 }
 

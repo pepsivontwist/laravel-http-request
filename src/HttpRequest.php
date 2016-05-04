@@ -2,12 +2,12 @@
 
 namespace Overburn\HttpRequest;
 
-use Illuminate\Support\Facades\Facade;
 
-class HttpRequest extends Facade {
-	$defaultOptions = [
+class HttpRequest {
 
-	]
+	public function __construct() {
+		
+	}
 
 	public function get($url, $params) {
 		$ch = curl_init();
