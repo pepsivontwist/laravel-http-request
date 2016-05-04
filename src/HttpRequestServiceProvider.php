@@ -23,6 +23,7 @@ class HttpRequestServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+
     }
 }
+

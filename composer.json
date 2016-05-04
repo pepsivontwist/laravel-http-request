@@ -7,6 +7,11 @@
             "email": "teodormatis@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Overburn\\HttpRequest\\": "src/"
+        }
+    },
     "minimum-stability": "dev",
     "require": {}
 }
