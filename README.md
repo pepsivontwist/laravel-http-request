@@ -23,7 +23,10 @@ Alias the HttpRequest facade by adding it to the aliases array in the `config/ap
 
 ## Usage
 
-### HttpRequest::get($url, $params = [])
+```php
+HttpRequest::get($url, $params = [])
+```
 
-### HttpRequest::post($url, $params = [], $files = [])
-
+```php
+HttpRequest::post($url, $params = [], $files = [])
+```
