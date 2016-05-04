@@ -22,13 +22,21 @@ class HttpRequest {
 		return $output;
 	}
 
-	public static function post($url, $params = []) {
+	public static function post($url, $params = [], $files = []) {
 		$ch = curl_init();
 
 		curl_setopt($ch, CURLOPT_POST, 1);
 
+		if(count($files)) {
+			array_walk($files, function($file) {
+				$file = "@".$file;
+			});
+			
+			$params = array_merge($params, $files);
+		}
+
 		if(count($params) > 0) {			
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params));
 		}
 
 		curl_setopt($ch, CURLOPT_URL, $url);
