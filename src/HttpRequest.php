@@ -5,11 +5,7 @@ namespace Overburn\HttpRequest;
 
 class HttpRequest {
 
-	public function __construct() {
-		
-	}
-
-	public function get($url, $params) {
+	public static function get($url, $params = []) {
 		$ch = curl_init();
 
 		curl_setopt($ch, CURLOPT_URL, $url);
