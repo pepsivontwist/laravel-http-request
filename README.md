@@ -30,3 +30,7 @@ HttpRequest::get($url, $params = [])
 ```php
 HttpRequest::post($url, $params = [], $files = [])
 ```
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/overburn/laravel-http-request/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
