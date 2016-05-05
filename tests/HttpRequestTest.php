@@ -45,9 +45,20 @@ class HttpRequestTest extends \PHPUnit_Framework_TestCase
         $body = ["body"=>"yes", "three"=>"four"];
         $files = ["file" => "LICENSE.md"];
 
+        $options = [
+            "method" => $method,
+            "url" => $url,
+            "parameters" => ["test"=>"yes", "one"=>"two"];
+        ]
+
+        if($method != "get") {
+            $options["body"] = ["body"=>"yes", "three"=>"four"];
+            $options["files"] = ["file" => "LICENSE.md"];
+        }
 
 
-        $jsonResult = HttpRequest::$method($url, $parameters, $body, $files);
+
+        $jsonResult = HttpRequest::request($options);
 
         $result = json_decode($jsonResult);
 

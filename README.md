@@ -25,98 +25,32 @@ Alias the HttpRequest facade by adding it to the aliases array in the `config/ap
 ]
 ```
 
-## Usage (will break very soon)
+## Usage 
 
 
 ### HttpRequest::request
+
+Returns 
+
 ```php
-HttpRequest::request($verb = "get", $url, $params = [], $data = [], $files = []);
+[ 
+	"response" => "response body given by the server",
+	"info" => "the results of curl_getinfo() on the current request"
+]
 ```
 
-#### Example
 ```php
-HttpRequest::request("get", "http://httpbin.org/get", ["acme" => "beep-beep"])
+HttpRequest::request($options);
 ```
 
+The options is an array
 
-### HttpRequest::get
 ```php
-HttpRequest::get($url, $params = []);
-```
-
-#### Example
-```php
-HttpRequest::get("http://httpbin.org/get", ["acme" => "beep-beep"])
-```
-
-
-### HttpRequest::post
-```php
-HttpRequest::post($url, $params = [], $data = [], $files = []);
-```
-
-#### Example
-```php
-HttpRequest::post("http://httpbin.org/post", ["acme" => "beep-beep"], 
-		[
-			"product[]" => "SPRING-POWERED SHOES",
-			"product[]" => "ROCKET SKATES"
-		],
-		[
-			"order" => "acme.png"
-		])
-```
-
-
-### HttpRequest::put
-```php
-HttpRequest::put($url, $params = [], $data = [], $files = []);
-```
-
-#### Example
-```php
-HttpRequest::put("http://httpbin.org/post", ["acme" => "beep-beep"], 
-		[
-			"product[]" => "SPRING-POWERED SHOES",
-			"product[]" => "ROCKET SKATES"
-		],
-		[
-			"order" => "acme.png"
-		])
-```
-
-
-### HttpRequest::patch
-```php
-HttpRequest::patch($url, $params = [], $data = [], $files = []);
-```
-
-#### Example
-```php
-HttpRequest::patch("http://httpbin.org/post", ["acme" => "beep-beep"], 
-		[
-			"product[]" => "SPRING-POWERED SHOES",
-			"product[]" => "ROCKET SKATES"
-		],
-		[
-			"order" => "acme.png"
-		])
-```
-
-
-### HttpRequest::delete
-```php
-HttpRequest::delete($url, $params = [], $data = [], $files = []);
-```
-
-#### Example
-```php
-HttpRequest::delete("http://httpbin.org/post", ["acme" => "beep-beep"], 
-		[
-			"product[]" => "SPRING-POWERED SHOES",
-			"product[]" => "ROCKET SKATES"
-		],
-		[
-			"order" => "acme.png"
-		])
+$options = [
+	"method" => "get", //required - get, post, put, patch, delete
+	"url" => "http://www.example.com", //required
+	"params" => ["parameter"=>"value", "another" => "newvalue"], // url parameters for the request (optional)
+	"data" => ["postdata[]"=>"avalue", "postdata[]"=>"anothervalue"], // data for post/put/patch/delete requests (optional, not available on "get")
+	"files" => ["file" => "./example.pdf"], //an array of files (optional, not available on "get")
+]
 ```

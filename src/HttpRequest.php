@@ -5,31 +5,51 @@ namespace Overburn\HttpRequest;
 
 class HttpRequest {
 
-	public static function request($verb = "get", $url, $params = [], $data = [], $files = []) {
+	$options = [
+		"method" => "get",
+		"url" => "",
+		"params" => [],
+		"data" => [],
+		"files" => []
+	]
+
+	public static function request( $options )
+	{
 		$ch = curl_init();
 
-		if(count($params) > 0) {
-			$url .= "?".http_build_query($params);
+		if(!isset($options['method'])) return ["error" => "'method' is required"];
+		$method = $options['method'];
+
+		if(!isset($options['url'])) return ["error" => "'url' is required"];
+		$url = $options['url'];
+
+		if(isset($options['params']) && count($options['params']) > 0) {			
+			$url .= "?".http_build_query($options['params']);
 		}
 
-	
-		if(count($files) > 0) {
+		$files = [];
+
+		if(isset($options['files']) && count($options['files']) > 0) {
+			$files = $options['files'];
+
 			foreach($files as $k=>$file) {
 				$files[$k] = new \CURLFile($file);
 			}
 		}
 
+		$data = [];
 
-
-
+		if(isset($options['data']) && count($options['data']) > 0) {
+			$data = $options['data'];
+		}
+	
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_SAFE_UPLOAD, true);
 
+		$body = array_merge($data, $files);		
 
-		$body = array_merge($data, $files);
-
-		switch($verb) {
+		switch($method) {
 			case "get":
 				//Roll with it
 				break;
@@ -57,30 +77,6 @@ class HttpRequest {
 
 		curl_close($ch);
 
-		return $output;
-	}
-
-	public static function get($url, $params = []) {
-		return self::request("get", $url, $params);
-	}
-
-	public static function post($url, $params = [], $data = [], $files = []) {
-	
-		return self::request("post", $url, $params, $data, $files);
-	}
-
-	public static function put($url, $params = [], $data = [], $files = []) {
-		return self::request("put", $url, $params, $data, $files);
-	}
-
-	public static function patch($url, $params = [], $data = [], $files = []) {
-		return self::request("patch", $url, $params, $data, $files);
-	}
-
-	public static function delete($url, $params = [], $data = [], $files = []) {
-		return self::request("delete", $url, $params, $data, $files);
-	}
-
-
-	
+		return ["response" => $output, "info" => $info];
+	}	
 }
