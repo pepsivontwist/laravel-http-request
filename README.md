@@ -27,11 +27,12 @@ Alias the HttpRequest facade by adding it to the aliases array in the `config/ap
 HttpRequest::request($verb = "get", $url, $params = [], $data = [], $files = []);
 ```
 
+### Example
 ```php
 HttpRequest::request("get", "http://httpbin.org/get", ["acme" => "beep-beep"])
 ```
 
-``php
+```php
 HttpRequest::get($url, $params = []);
 ```
 
