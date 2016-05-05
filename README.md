@@ -23,29 +23,35 @@ Alias the HttpRequest facade by adding it to the aliases array in the `config/ap
 
 ## Usage
 
+
+### HttpRequest::request
 ```php
 HttpRequest::request($verb = "get", $url, $params = [], $data = [], $files = []);
 ```
 
-### Example
+#### Example
 ```php
 HttpRequest::request("get", "http://httpbin.org/get", ["acme" => "beep-beep"])
 ```
 
+
+### HttpRequest::get
 ```php
 HttpRequest::get($url, $params = []);
 ```
 
-### Example
+#### Example
 ```php
 HttpRequest::get("http://httpbin.org/get", ["acme" => "beep-beep"])
 ```
 
+
+### HttpRequest::post
 ```php
 HttpRequest::post($url, $params = [], $data = [], $files = []);
 ```
 
-### Example
+#### Example
 ```php
 HttpRequest::post("http://httpbin.org/post", ["acme" => "beep-beep"], 
 		[
@@ -57,10 +63,13 @@ HttpRequest::post("http://httpbin.org/post", ["acme" => "beep-beep"],
 		])
 ```
 
+
+### HttpRequest::put
 ```php
 HttpRequest::put($url, $params = [], $data = [], $files = []);
 ```
-### Example
+
+#### Example
 ```php
 HttpRequest::put("http://httpbin.org/post", ["acme" => "beep-beep"], 
 		[
@@ -72,10 +81,13 @@ HttpRequest::put("http://httpbin.org/post", ["acme" => "beep-beep"],
 		])
 ```
 
+
+### HttpRequest::patch
 ```php
 HttpRequest::patch($url, $params = [], $data = [], $files = []);
 ```
-### Example
+
+#### Example
 ```php
 HttpRequest::patch("http://httpbin.org/post", ["acme" => "beep-beep"], 
 		[
@@ -87,11 +99,13 @@ HttpRequest::patch("http://httpbin.org/post", ["acme" => "beep-beep"],
 		])
 ```
 
+
+### HttpRequest::delete
 ```php
 HttpRequest::delete($url, $params = [], $data = [], $files = []);
 ```
 
-### Example
+#### Example
 ```php
 HttpRequest::delete("http://httpbin.org/post", ["acme" => "beep-beep"], 
 		[
