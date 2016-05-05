@@ -2,6 +2,13 @@
     "name": "overburn/http-request",
     "description": "CURL wrapper for Laravel",
     "license": "MIT",
+    "homepage": "https://github.com/overburn/laravel-http-request",
+    "keywords": [
+        "laravel",
+        "laravel5",
+        "http-request",
+        "request"
+    ],
     "authors": [
         {
             "name": "Teodor Matis",
