@@ -1,17 +1,23 @@
 {
     "name": "overburn/http-request",
     "description": "CURL wrapper for Laravel",
+    "license": "MIT",
     "authors": [
         {
             "name": "Teodor Matis",
-            "email": "teodormatis@gmail.com"
+            "email": "teodormatis@gmail.com",
+            "role": "Developer"
         }
     ],
     "autoload": {
         "psr-4": {
-            "Overburn\\HttpRequest\\": "src/"
+            "Overburn\\HttpRequest\\": "src/",
+            "Overburn\\Tests\\HttpRequest\\": "tests/"
         }
     },
     "minimum-stability": "dev",
-    "require": {}
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
+    }
 }

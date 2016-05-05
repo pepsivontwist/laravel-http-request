@@ -24,9 +24,80 @@ Alias the HttpRequest facade by adding it to the aliases array in the `config/ap
 ## Usage
 
 ```php
-HttpRequest::get($url, $params = [])
+HttpRequest::request($verb = "get", $url, $params = [], $data = [], $files = []);
 ```
 
 ```php
-HttpRequest::post($url, $params = [], $files = [])
+HttpRequest::request("get", "http://httpbin.org/get", ["acme" => "beep-beep"])
+```
+
+``php
+HttpRequest::get($url, $params = []);
+```
+
+### Example
+```php
+HttpRequest::get("http://httpbin.org/get", ["acme" => "beep-beep"])
+```
+
+```php
+HttpRequest::post($url, $params = [], $data = [], $files = []);
+```
+
+### Example
+```php
+HttpRequest::post("http://httpbin.org/post", ["acme" => "beep-beep"], 
+		[
+			"product[]" => "SPRING-POWERED SHOES",
+			"product[]" => "ROCKET SKATES"
+		],
+		[
+			"order" => "acme.png"
+		])
+```
+
+```php
+HttpRequest::put($url, $params = [], $data = [], $files = []);
+```
+### Example
+```php
+HttpRequest::put("http://httpbin.org/post", ["acme" => "beep-beep"], 
+		[
+			"product[]" => "SPRING-POWERED SHOES",
+			"product[]" => "ROCKET SKATES"
+		],
+		[
+			"order" => "acme.png"
+		])
+```
+
+```php
+HttpRequest::patch($url, $params = [], $data = [], $files = []);
+```
+### Example
+```php
+HttpRequest::patch("http://httpbin.org/post", ["acme" => "beep-beep"], 
+		[
+			"product[]" => "SPRING-POWERED SHOES",
+			"product[]" => "ROCKET SKATES"
+		],
+		[
+			"order" => "acme.png"
+		])
+```
+
+```php
+HttpRequest::delete($url, $params = [], $data = [], $files = []);
+```
+
+### Example
+```php
+HttpRequest::delete("http://httpbin.org/post", ["acme" => "beep-beep"], 
+		[
+			"product[]" => "SPRING-POWERED SHOES",
+			"product[]" => "ROCKET SKATES"
+		],
+		[
+			"order" => "acme.png"
+		])
 ```
