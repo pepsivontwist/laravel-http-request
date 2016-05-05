@@ -1,5 +1,6 @@
 # overburn/http-request
 
+[![Build Status](https://travis-ci.org/overburn/laravel-http-request.svg?branch=master)](https://travis-ci.org/overburn/laravel-http-request)
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/overburn/laravel-http-request/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 ## Installation
