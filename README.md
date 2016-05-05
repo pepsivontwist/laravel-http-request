@@ -25,7 +25,7 @@ Alias the HttpRequest facade by adding it to the aliases array in the `config/ap
 ]
 ```
 
-## Usage
+## Usage (will break very soon)
 
 
 ### HttpRequest::request
