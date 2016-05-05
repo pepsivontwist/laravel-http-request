@@ -5,14 +5,6 @@ namespace Overburn\HttpRequest;
 
 class HttpRequest {
 
-	$options = [
-		"method" => "get",
-		"url" => "",
-		"params" => [],
-		"data" => [],
-		"files" => []
-	]
-
 	public static function request( $options )
 	{
 		$ch = curl_init();

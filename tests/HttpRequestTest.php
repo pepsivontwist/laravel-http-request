@@ -48,11 +48,11 @@ class HttpRequestTest extends \PHPUnit_Framework_TestCase
         $options = [
             "method" => $method,
             "url" => $url,
-            "parameters" => ["test"=>"yes", "one"=>"two"];
-        ]
+            "params" => ["test"=>"yes", "one"=>"two"]
+        ];
 
         if($method != "get") {
-            $options["body"] = ["body"=>"yes", "three"=>"four"];
+            $options["data"] = ["body"=>"yes", "three"=>"four"];
             $options["files"] = ["file" => "LICENSE.md"];
         }
 
@@ -60,7 +60,7 @@ class HttpRequestTest extends \PHPUnit_Framework_TestCase
 
         $jsonResult = HttpRequest::request($options);
 
-        $result = json_decode($jsonResult);
+        $result = json_decode($jsonResult["response"]);     
 
         $this->assertNotNull($result);
 
