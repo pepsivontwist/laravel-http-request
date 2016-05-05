@@ -1,6 +1,9 @@
-# overburn/http-request
+# overburn/laravel-http-request
 
 [![Build Status](https://travis-ci.org/overburn/laravel-http-request.svg?branch=master)](https://travis-ci.org/overburn/laravel-http-request)
+[![Latest Stable Version](https://poser.pugx.org/overburn/http-request/v/stable)](https://packagist.org/packages/overburn/http-request)
+[![Total Downloads](https://poser.pugx.org/overburn/http-request/downloads)](https://packagist.org/packages/overburn/http-request)
+[![License](https://poser.pugx.org/overburn/http-request/license)](https://packagist.org/packages/overburn/http-request)
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/overburn/laravel-http-request/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 ## Installation
