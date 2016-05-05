@@ -1,7 +1,5 @@
 # overburn/http-request
 
-## [Work In Progress]
-
 ## Installation
 
 Update your `composer.json` file to include this package as a dependency
@@ -101,3 +99,5 @@ HttpRequest::delete("http://httpbin.org/post", ["acme" => "beep-beep"],
 			"order" => "acme.png"
 		])
 ```
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/overburn/laravel-http-request/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
