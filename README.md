@@ -30,7 +30,7 @@ Alias the HttpRequest facade by adding it to the aliases array in the `config/ap
 
 ### HttpRequest::request
 
-Returns 
+Sends a request , and returns an array of the following form:
 
 ```php
 [ 
@@ -39,7 +39,14 @@ Returns
 ]
 ```
 
+Example:
+
 ```php
+$options = [ 
+	"method" => "get",
+	"url" => "http://www.example.com"
+];
+
 HttpRequest::request($options);
 ```
 
