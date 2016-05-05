@@ -10,7 +10,7 @@
 
 Update your `composer.json` file to include this package as a dependency
 ```json
-"overburn/http-request"
+"overburn/http-request": "~1.0"
 ```
 
 Register the HttpRequest service provider by adding it to the providers array in the `config/app.php` file.
