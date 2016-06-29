@@ -4,7 +4,6 @@
 [![Latest Stable Version](https://poser.pugx.org/overburn/http-request/v/stable)](https://packagist.org/packages/overburn/http-request)
 [![Total Downloads](https://poser.pugx.org/overburn/http-request/downloads)](https://packagist.org/packages/overburn/http-request)
 [![License](https://poser.pugx.org/overburn/http-request/license)](https://packagist.org/packages/overburn/http-request)
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/overburn/laravel-http-request/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 ## Installation
 
@@ -25,7 +24,7 @@ Alias the HttpRequest facade by adding it to the aliases array in the `config/ap
 ]
 ```
 
-## Usage 
+## Usage
 
 
 ### HttpRequest::request
@@ -33,7 +32,7 @@ Alias the HttpRequest facade by adding it to the aliases array in the `config/ap
 Sends a request , and returns an array of the following form:
 
 ```php
-[ 
+[
 	"response" => "response body given by the server",
 	"info" => "the results of curl_getinfo() on the current request"
 ]
@@ -42,7 +41,7 @@ Sends a request , and returns an array of the following form:
 Example:
 
 ```php
-$options = [ 
+$options = [
 	"method" => "get",
 	"url" => "http://www.example.com"
 ];
