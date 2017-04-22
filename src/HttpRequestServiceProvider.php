@@ -23,9 +23,11 @@ class HttpRequestServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app['httpRequest'] = $this->app->share(function($app) {
-            return new HttpRequest();
+        $this->app->singleton(HttpRequest::class, function () {
+            return new HttpRequest;
         });
+
+        $this->app->alias(HttpRequest::class, 'httpRequest');
     }
 }
 
